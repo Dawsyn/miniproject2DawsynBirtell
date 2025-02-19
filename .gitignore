@@ -170,4 +170,8 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
+#CSV data file
 Mobiles Dataset (2025).csv
+
+#Created charts folder
+charts/

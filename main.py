@@ -22,14 +22,16 @@ Here are some other great datasets: https://www.kaggle.com/datasets
 DONE
 (10/10 points) Using matplotlib, graph this data in a way that will visually represent the data. Really try to build some fancy charts here as it will greatly help you in future homework assignments and in the final project.
 (10/10 points) Save these graphs in a folder called charts as PNG files. Do not upload these to your project folder, the project should save these when it executes. You may want to add this folder to your .gitignore file.
+DONE
 (10/10 points) There should be a minimum of 5 commits on your project, be sure to commit often!
+DONE
 (10/10 points) I will be checking out the main branch of your project. Please be sure to include a requirements.txt file which contains all the packages that need installed. You can create this fille with the output of pip freeze at the terminal prompt.
 (20/20 points) There should be a README.md file in your project that explains what your project is, how to install the pip requirements, and how to execute the program. Please use the GitHub flavor of Markdown. Be thorough on the explanations.
 """
 
 
 import pandas as pd
-import numpy as np
+import os
 import matplotlib.pyplot as plt
 
 os.makedirs('charts', exist_ok=True)
@@ -40,16 +42,18 @@ models = pd.read_csv("Mobiles Dataset (2025).csv", index_col=0, parse_dates=True
 # iphone models to graph
 iphone_models = ["iPhone 16", "iPhone 15", "iPhone 14", "iPhone 13", "iPhone 12"]
 
+i= 0 # index for iphone_models
 
 # Loop through each iPhone model and plot
 for model in iphone_models:
     filtered_data = models[models['Model Name'].str.contains(model, na=False, case=False)]
+    plt.figure(figsize=(10, 10)) #sets figure size
     plt.plot(filtered_data['Model Name'], filtered_data['Launched Price (USA)'], marker='o', linestyle='-', label=model)
-    plt.xlabel('Model')
-    plt.ylabel('Launch Price (USA)')
-    plt.title("iPhone Launch Prices")
-    plt.xticks(rotation=45, ha='right')
-    #plt.show()
-    #plt.savefig(f'charts//{ticker}.png')
+    plt.xlabel('Model') # x-axis label
+    plt.ylabel('Launch Price (USA)') # y-axis label
+    plt.title("iPhone Launch Prices") # title of the graph
+    plt.xticks(rotation=30, ha='right') # rotate x-axis labels
+    plt.savefig(f'charts//{iphone_models[i]}.png') # save the graph as a png file
+    i += 1 # increment index for file names
 
 
