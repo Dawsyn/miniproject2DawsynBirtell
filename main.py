@@ -32,6 +32,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+os.makedirs('charts', exist_ok=True)
+
 # Load the dataset into a pandas dataframe | Added incoding to fix error
 models = pd.read_csv("Mobiles Dataset (2025).csv", index_col=0, parse_dates=True, encoding="Windows-1252")
 
@@ -47,8 +49,7 @@ for model in iphone_models:
     plt.ylabel('Launch Price (USA)')
     plt.title("iPhone Launch Prices")
     plt.xticks(rotation=45, ha='right')
-    plt.show()
-
-#plt.plot(models[models['Model Name'].str.contains("16")], models['Launched Price (USA)'])
+    #plt.show()
+    #plt.savefig(f'charts//{ticker}.png')
 
 
