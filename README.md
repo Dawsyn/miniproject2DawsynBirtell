@@ -3,7 +3,7 @@
 # Mini Project 2
 
 ### Description
-This program gets the closing prices of the last 10 days of 5 stocks and plots the prices on a graph.
+This program looks at the last 5 iphone models and compares the launch prices across 5 different regions
 
 
 ### Dependencies
@@ -22,12 +22,13 @@ python main.py
 
 
 ### Output
-This will create 5 graphs in charts/ for each of the 5 stocks in .png format. 
+This will create 5 graphs in charts/ for each of the iPhone models in .png format. 
 
 ## Authors
 Dawsyn Birtell
 
 ## Acknowledgements
 Code Snippets   
-* [yfinance](https://pypi.org/project/yfinance/)
 * [matplotlib](https://matplotlib.org/stable/tutorials/pyplot.html)
+* [pandas](https://pandas.pydata.org/pandas-docs/stable/index.html)
+* [chatGPT](https://chatgpt.com/share/67b797d9-c064-8002-a187-ebb51760a5d6)
